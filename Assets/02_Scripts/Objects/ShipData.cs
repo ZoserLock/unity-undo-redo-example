@@ -34,6 +34,11 @@ public class ShipData
 
     #endregion
 
+    public ShipData()
+    {
+        _position = Random.insideUnitSphere*5;
+    }
+
     public void SetVisual(ShipVisual visual)
     {
         if (visual != null)
