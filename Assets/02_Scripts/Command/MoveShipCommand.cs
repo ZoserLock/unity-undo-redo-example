@@ -8,17 +8,11 @@ public class MoveShipCommand : Command
     private Vector3 _newPos;
     private ShipData _ship;
 
-
     public MoveShipCommand(ShipData ship, Vector3 oldPos, Vector3 newPos)
     {
         _ship = ship;
         _oldPos = oldPos;
         _newPos = newPos;
-    }
-
-    public string GetName()
-    {
-        return "Move to" + _newPos;
     }
 
     public void Execute()
@@ -29,6 +23,11 @@ public class MoveShipCommand : Command
     public void Unexecute()
     {
         _ship.Position = _oldPos;
+    }
+
+    public string GetName()
+    {
+        return "Move to" + _newPos;
     }
 
     public static MoveShipCommand Create(ShipData ship, Vector3 oldPos, Vector3 newPos)
